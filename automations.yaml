@@ -15,3 +15,4 @@
       topic: homeassistant/sensor/rt-test/response
       payload_template: '{{ trigger.to_state.state }}'
   mode: single
+
