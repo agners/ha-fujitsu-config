@@ -1,0 +1,17 @@
+- id: '1693338503136'
+  alias: MQTT RT ping
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.rt_test
+    id: trigger
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      qos: '0'
+      retain: false
+      topic: homeassistant/sensor/rt-test/response
+      payload_template: '{{ trigger.to_state.state }}'
+  mode: single
